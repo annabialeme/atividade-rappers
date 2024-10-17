@@ -108,3 +108,14 @@ if (!rapper) {
       .status(404)
       .json({ message: `Rapper com id ${id} não encontrado!` });
     }
+
+    // Remove o rapper do array de rappers
+rappers = rappers.filter((rappers) => rappers.id != id);
+
+return res.status(200).json({
+message: "Rapper removido com sucesso!",
+rapper,
+});
+});
+
+
