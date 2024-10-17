@@ -70,9 +70,27 @@ if (!nome) {
       message: "O campo nome é obrigatório!",
     });
   }
-  // Validação de existência no envolvimento no crime
+// Validação de existência no envolvimento no crime
 if (envolvimentoNoCrime != "sim" && envolvimentoNoCrime != "não") {
     return res.status(400).send({
       message: "Digite 'sim' ou 'não'!",
     });
   }
+
+// Validação da idade como um número inteiro
+if (Number.isInteger(idade) == false) {
+    return res.status(400).send({
+      message: "A idade do rapper deve ser um número inteiro!",
+    });
+  }
+  
+    rapper.nome = nome;
+    rapper.idade = idade;
+    rapper.descriçãoFisica = descriçãoFisica;
+    rapper.envolvimentoNoCrime = envolvimentoNoCrime || [];
+  
+    return res.status(200).json({
+      message: "Rapper atualizado com sucesso!",
+      rapper,
+    });
+  });
