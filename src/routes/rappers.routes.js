@@ -70,3 +70,9 @@ if (!nome) {
       message: "O campo nome é obrigatório!",
     });
   }
+  // Validação de existência no envolvimento no crime
+if (envolvimentoNoCrime != "sim" && envolvimentoNoCrime != "não") {
+    return res.status(400).send({
+      message: "Digite 'sim' ou 'não'!",
+    });
+  }
