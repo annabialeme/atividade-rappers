@@ -101,3 +101,10 @@ rappersRoutes.delete("/:id", (req, res) => {
 
 // Busca rappers pelo id no array de rappers
 const rappers = rappers.find((rappers) => rappers.id == id);
+
+// Verifica se o rapper foi encontrado
+if (!rapper) {
+    return res
+      .status(404)
+      .json({ message: `Rapper com id ${id} não encontrado!` });
+    }
