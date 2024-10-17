@@ -46,7 +46,7 @@ rappersRoutes.get("/:id", (req, res) => {
 // Busca um rapper pelo id no array de rappers
   const rapper = rappers.find((rapper) => rapper.id == id);
 
-  // Verifica se o rapper foi encontrado
+// Verifica se o rapper foi encontrado
   if (!rapper) {
     return res
       .status(404)
@@ -55,3 +55,18 @@ rappersRoutes.get("/:id", (req, res) => {
 
   return res.status(200).json(rapper);
 });
+
+// Rota para atualizar um rapper pelo id
+rappersRoutes.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { nome, idade, descriçãoFisica, envolvimentoNoCrime } = req.body;
+
+// Busca um rapper pelo id no array de rappers
+  const rapper = rappers.find((r) => r.id == id);
+
+// Validação dos campos obrigatórios
+if (!nome) {
+    return res.status(400).json({
+      message: "O campo nome é obrigatório!",
+    });
+  }
