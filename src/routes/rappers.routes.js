@@ -94,3 +94,10 @@ if (Number.isInteger(idade) == false) {
       rapper,
     });
   });
+
+// Rota para deletar um rapper
+rappersRoutes.delete("/:id", (req, res) => {
+    const { id } = req.params;
+
+// Busca rappers pelo id no array de rappers
+const rappers = rappers.find((rappers) => rappers.id == id);
