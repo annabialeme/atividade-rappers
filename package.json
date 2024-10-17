@@ -1,0 +1,17 @@
+{
+  "name": "rapper",
+  "version": "1.0.0",
+  "description": "Essa é uma atividade de Back-end para desenvolver um sistema de cadastro de suspeitos em investigação do FBI",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SENAI",
+    "Back-End",
+    "Suspeito",
+    "Rapper"
+  ],
+  "author": "Anna Leme",
+  "license": "MIT"
+}
