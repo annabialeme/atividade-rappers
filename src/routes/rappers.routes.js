@@ -39,6 +39,19 @@ rappersRoutes.get("/", (req, res) => {
     return res.status(200).json(rappers);
 });
 
-// Rota para buscar um rappers pelo id
+// Rota para buscar um rapper pelo id
 rappersRoutes.get("/:id", (req, res) => {
     const { id } = req.params;
+
+// Busca um rapper pelo id no array de rappers
+  const rapper = rappers.find((rapper) => rapper.id == id);
+
+  // Verifica se o rapper foi encontrado
+  if (!rapper) {
+    return res
+      .status(404)
+      .json({ message: `Rapper com id ${id} não encontrado!` });
+  }
+
+  return res.status(200).json(rapper);
+});
