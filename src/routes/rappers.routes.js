@@ -109,7 +109,7 @@ if (!rapper) {
       .json({ message: `Rapper com id ${id} não encontrado!` });
     }
 
-    // Remove o rapper do array de rappers
+// Remove o rapper do array de rappers
 rappers = rappers.filter((rappers) => rappers.id != id);
 
 return res.status(200).json({
@@ -118,4 +118,5 @@ rapper,
 });
 });
 
+export default rappersRoutes;
 
